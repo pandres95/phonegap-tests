@@ -5,25 +5,25 @@
         <!-- <script src="phonegap-1.1.0.js"></script> -->
         <script>
             var acelerometroId;
-
+            var opciones = { frequency: 3000 };
+            
+            function phoneGap() {
+                acelerometroId = navigator.accelerometer.watchAcceleration(acelera, error, opciones);
+            }
+            
             function error() {
                 alert("No se puede leer el acelerometro");
             }
 
             function acelera(aceleracion) {
-                // Aqui hay codigo
-                var x = aceleracion.x;
-                var y = aceleracion.y;
-                var z = aceleracion.z;
-                var time = aceleracion.timestamp;
-                var posicion = document.getElementById("Posicion");
-                posicion.textContent = "(" + x + ", " + y + ", " + z + ")";
-            }
+                document.getElementById("Posicion").innerHTML = ('Acceleration X: ' + acceleration.x + '\n' +
+                        'Acceleration Y: ' + acceleration.y + '\n' +
+                        'Acceleration Z: ' + acceleration.z + '\n' +
+                        'Timestamp: '      + acceleration.timestamp + '\n');
 
-            function phoneGap() {
-                acelerometroId = navigator.accelerometer.watchAcceleration(acelera, error);
             }
-
+            
+            
             document.addEventListener("deviceready", phoneGap, false);
         </script>
     </head>
