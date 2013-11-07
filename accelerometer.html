@@ -16,6 +16,8 @@
                 var y = aceleracion.y;
                 var z = aceleracion.z;
                 var time = aceleracion.timestamp;
+                var posicion = document.getElementById("Posicion");
+                posicion.innerHTML = "(" + x + ", " + y + ", " + z + ")";
             }
 
             function phoneGap() {
@@ -26,7 +28,7 @@
         </script>
     </head>
     <body>
-
         Hola mundo!
+        <div id="Posicion"></div>
     </body>
 </html>
