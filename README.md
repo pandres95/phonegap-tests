@@ -1,0 +1,4 @@
+phonegap-tests
+==============
+
+PhoneGap tests
