@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Acelerometro</title>
+        <script src="phonegap-1.1.0.js"></script>
+        <script>
+            var acelerometroId;
+
+            function error() {
+                alert("No se puede leer el acelerometro");
+            }
+
+            function acelera(aceleracion) {
+                // Aqui hay codigo
+                var x = aceleracion.x;
+                var y = aceleracion.y;
+                var z = aceleracion.z;
+                var time = aceleracion.timestamp;
+            }
+
+            function phoneGap() {
+                acelerometroId = navigator.accelerometer.watchAcceleration(acelera, error);
+            }
+
+            document.addEventListener("deviceReady", phoneGap, false);
+        </script>
+    </head>
+    <body>
+
+        Hola mundo!
+    </body>
+</html>
